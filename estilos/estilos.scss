@@ -1,0 +1,353 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+// variables
+$colors1:black;
+$colors2: yellow;
+$colors3:white;
+
+// paleta
+
+$palette: (
+    "color1": black,
+    "color2": yellow,
+    "color3": white
+);
+
+@import "../componentes/sobremi.scss";
+@import "../base/base.scss";
+
+
+// FONTS
+
+$font1:'Macondo', cursive;
+
+@mixin c-fz ($c, $fm) {
+    color: $c;
+    font-family: $fm;
+}
+
+
+body{
+    background-image: url(../Img/statue-6611608_640.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo{
+    width: 100%;
+    height: 100px;
+    background-color: map-get($map: $palette, $key:"color1" );
+    margin-bottom:20px;
+
+    p{
+        font-size:3.5em;
+        text-align: center;
+        margin: 15px;
+        @include c-fz($colors3,$font1);
+    }
+}
+
+
+header{
+    width: 100%;
+    height: 90px;
+    background-color: map-get($map: $palette, $key: "color1");
+    box-shadow: 15px 15px 15px 15px map-get($map: $palette, $key: "color2" ) ;
+
+    ul{
+        text-align: right;
+    }
+
+    a{
+        text-decoration: none;
+        color:map-get($map: $palette, $key: "color3");
+        color:white;
+    }
+
+    li{
+        display: inline-block;
+        color: map-get($map: $palette, $key: "color3");
+        list-style: none;
+        margin: 20px;
+        padding: 5px;
+        font-size:2em;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    li:hover{
+        color:yellow;
+        background-color:green;
+        border-radius:5px;
+    }
+}
+
+.inFo  {
+
+    h1{
+    font-size:5.5em;
+    text-align:center;
+    color: map-get($map: $palette, $key: "color3");
+    }
+
+    p{
+        margin-top: 10px;
+        color:white;
+        font-size: 2em;
+        text-align: center;
+        font-family: cursive;
+    }
+
+}
+
+.boTon{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    button{
+        width:200px;
+        height:50px;
+        background-color: black;
+        color:white;
+        font-size:1em;
+    }
+
+    button:hover{
+        background-color:map-get($map: $palette, $key: "color2");
+        color: black;
+    }
+}
+
+footer{
+    margin-top:10px;
+    background-color:map-get($map: $palette, $key:"color2" );
+    border: 5px solid black;
+    color: white;
+    font-size: 22px;
+    h3{
+        color:black;
+        font-family:'Macondo', cursive; ;
+        padding:0.5em;
+    }
+    ul{
+        list-style: none;
+    }
+
+    li{
+        color:black;
+    }
+
+    .copyright{
+        color:black;
+        padding:2px;
+        font-size:1.2em;
+        text-align:center;
+    }
+}
+
+.titulo{
+    color: map-get($map: $palette, $key: "color3");
+    text-align: center;
+    padding: 2.5rem 0;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    text-decoration: underline;
+    text-decoration-color: map-get($map: $palette, $key: "color3" );
+    font-size: 2.5rem;
+    font-family: $font1;
+}
+
+.gallery{
+    padding:80px 20px;
+
+    img{
+        max-width: 100%;
+        padding:15px;
+        background-color:#ffffff;
+        width: 100%;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        cursor: pointer;
+        transition: transform 0.5s;
+    }
+
+    img:hover{
+        filter:blur(2px);
+        transform: rotate(10deg) scale(1.3);
+    }
+}
+
+.tiTtle{
+    background-color: map-get($map: $palette, $key: "color2");
+    text-align: center;
+
+    h1{
+        font-size: 3.5em;
+        font-family: fantasy;
+    }
+}
+
+.conteNedor{
+    align-content: center;
+    
+
+    p{
+        @include c-fz($colors3,$font1);
+        text-align: center;
+        font-size: 2.5em;
+    }
+}
+
+.noMbre{
+    background-color: $colors2;
+    box-shadow: 15px 15px 15px 15px white;
+
+    h1{
+        text-align: center;
+        font-size: 3.5em;
+        font-family: fantasy;
+    }
+}
+
+.ucard{
+    margin-top:50px;
+    width:100%;
+
+    .iMg{
+        display:flex;
+        justify-content: center;
+    }
+
+    h2{
+        @include c-fz($colors3, $font1);
+        font-size: 3em;
+        text-align: center;
+        text-transform:capitalize;
+        margin-top: 20px;
+    }
+
+    p{
+        font-size:3em;
+        color:$colors3;
+        margin-top: 20px;
+        font-family: cursive;
+        text-align: center;
+    }
+}
+
+.Formulario{
+    padding: 20px;
+    background-color: black;
+
+}
+
+.botones{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    button{
+        width:200px;
+        height:50px;
+        background-color: black;
+        color:white;
+        font-size:1.5em;
+    }
+
+    button:hover{
+        background-color:map-get($map: $palette, $key: "color2");
+        color: black;
+    }
+}
+
+
+.tiFor{
+    background-color: yellow;
+
+    h1{
+        text-align: center;
+        text-shadow: 5px 5px white;
+        font-size: 3.5em;
+    }
+
+}
+
+.final{
+    margin: 50px 0 50px 0;
+    background-color:map-get($map: $palette, $key: "color2");
+    
+    h1{
+        text-align: center;
+        font-size: 3.5em;
+        font-family: cursive;
+    }
+}
+
+
+@media (max-width: 870px) {
+@media (min-width: 310px){
+
+    .logo{
+        width: 100%;
+        height: 100px;
+        background-color: map-get($map: $palette, $key:"color1" );
+        text-align: center;
+    
+        p{
+            color: map-get($map: $palette, $key: "color2");
+            font-size:2.5em;
+            text-align: center;
+            margin: 15px;
+            font-family: $font1;
+            padding:20px;
+        }
+    }
+
+header{
+    width: 100%;
+    min-height:350px;
+    background-color: map-get($map: $palette, $key: "color1");
+    box-shadow: 15px 15px 15px 15px map-get($map: $palette, $key: "color2" ) ;
+
+    ul{
+        text-align: right;
+    }
+
+    li{
+        display:list-item;
+        color: map-get($map: $palette, $key: "color3");
+        list-style: none;
+        margin: 20px;
+        padding: 5px;
+        font-size:1.5em;
+        text-align: center;
+    }
+
+    li:hover{
+        color:yellow;
+        background-color:green;
+        border-radius:5px;
+    }
+}
+
+.inFo  {
+
+    h1{
+    font-size:3.5em;
+    text-align:center;
+    color: map-get($map: $palette, $key: "color1");
+    }
+
+    p{
+        margin-top: 10px;
+        color:white;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+}
+}
+}

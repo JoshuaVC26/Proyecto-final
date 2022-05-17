@@ -1,0 +1,16 @@
+.ucard {
+    @extend .card;
+    >img {
+        @extend .avatar;
+        margin-bottom: 20px;
+    }
+    > h2 {
+        @extend .title;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    >p {
+        @extend .small;
+        text-align: center;
+    }
+}
